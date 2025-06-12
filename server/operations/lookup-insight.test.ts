@@ -8,7 +8,6 @@ describe("listing insights in the database", () => {
   describe("specified insight not in the DB", () => {
     withDB((fixture) => {
       let result: Insight | undefined;
-
       beforeAll(() => {
         result = lookupInsight({ ...fixture, id: 0 });
       });
@@ -46,3 +45,5 @@ describe("listing insights in the database", () => {
     });
   });
 });
+
+//deno test -A server/operations/lookup-insight.test.ts
